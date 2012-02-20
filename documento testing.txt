@@ -1,0 +1,30 @@
+Testing
+
+
+what should be tested?
+
+Player creation
+-can you change name?
+-does it accpet international characters?
+
+Player role
+-can you choose between all roles?
+-can you change role?
+-does it set the appropiate stats?
+
+
+main game
+
+
+move
+-module not created yet
+
+look
+-can you rest?
+-can you rest more than 3 times?
+-can you look more than 3 times?
+-can you battle things?
+--can you battle all 3 things? (skeleton,bat,slime)
+--does battle work properly?
+--can yout ake a potion on battle?
+--do you have critical and missed hits?

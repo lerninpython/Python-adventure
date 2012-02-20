@@ -1,5 +1,11 @@
 # Copyrigth 2012 - Itxaka Serrano Garcia <itxakaserrano@garciaperez.net>
 
+
+# Seleccionar un numero random entre 1 y 10
+# random.randint(1,10)
+# Seleccionar un item de una lista
+# random.choice(lista)
+
 version = 0.4
 status = "Beta"
 

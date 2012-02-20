@@ -1,0 +1,14 @@
+TODO
+---------------------------------
+
+add move function which actually moves
+add levels
+add stat upgrades that go with levels
+enemies level up with you, half implemented
+create a separate list for weapons and attributes (Dictionary?)
+loot from the monsters
+money
+shops?
+npcs
+missions?
+fancy graphics :(

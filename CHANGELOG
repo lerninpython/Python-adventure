@@ -1,0 +1,24 @@
+CHANGELOG
+---------------------------------
+
+
+version 0.4
+added progress bar function
+removed battle_special fuction. Integrated into the normal battle() function
+fixed a problem when choosing a role and not using a number
+cleanup (returning health for no reason...wtf was I thinking?)
+added look_count so the player can only look 2 times on each part of the map
+set version to 0.4
+
+
+version 0.3
+added potion fuction, potion is now working.
+something else
+
+
+version 0.2
+404 version not found
+
+
+version 0.1
+initial verison, most of the stuff

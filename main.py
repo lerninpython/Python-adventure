@@ -6,7 +6,7 @@
 # Seleccionar un item de una lista
 # random.choice(lista)
 
-version = 0.4
+version = 0.5
 status = "Beta"
 
 
@@ -34,7 +34,7 @@ import os
 import time
 
 
-# progress bar?
+# progress bar
 # Output example: [=======   ]
 def progress():
     marks = experience
@@ -42,6 +42,20 @@ def progress():
     loader = "[" + ("=" * int(marks)) + (" " * int(spaces)) + "]" 
     print ("Experience"+loader)
 
+    
+# check if the player has leveled up
+def check_levelup():
+    global experience, player_level,health,power,magic
+    if experience >= 10:
+        player_level = player_level + 1
+        print ("\nLevel up! You are level",player_level)
+        experience = 0
+        health = health + 2
+        power = power + 2
+        magic = magic + 1
+    else:
+        pass
+    
 # create a fuction to clear the screen which work across all os
 def clear_screen():
     clear = ""
@@ -138,8 +152,7 @@ def battle(enemy):
     
     
 def take_potion():
-    global inventory
-    global health
+    global inventory,health
     if "potion" in inventory:
         inventory.remove("potion")
         health = health+10
@@ -147,6 +160,8 @@ def take_potion():
         print ("\nYou don't have any potion")
      
 def move():
+    global look_count
+    look_count = 0
     pass
 
 
@@ -240,18 +255,11 @@ print ("\nHealth=",health)
 print ("\nPower=",power)
 print ("\nMagic=",magic)
 print ("\nThis is your inventory:",inventory)
-
-
+    
 
 while health >= 0 and game_on != 999:
+    check_levelup()
     option = input("\noptions: 1-move, 2-look, 3-rest, 9-stats, 99-inventory, 999-quit game\n>")
-    if experience == 10:
-        print ("\nLevel up! You are level",player_level)
-        player_level = player_level + 1
-        experience = 0
-        health = health + 2
-        power = power + 2
-        magic = magic + 1
     if option == "1":
         move()
     elif option == "2":
@@ -270,6 +278,7 @@ while health >= 0 and game_on != 999:
     elif option == "9":
         os.system(clear_screen())
         progress()
+        print ("\nLevel:",player_level)
         print ("\nHealth=",health)
         print ("\nPower=",power)
         print ("\nMagic=",magic)

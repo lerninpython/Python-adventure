@@ -1,15 +1,18 @@
 TODO
 ---------------------------------
 
-add move function which actually moves
-add levels
-add stat upgrades that go with levels
-enemies level up with you, half implemented
-create a separate list for weapons and attributes (Dictionary?)
-loot from the monsters
-money
-shops?
-npcs
-missions?
-fancy graphics :(
-something else
+-nice bars for health, magic and power
+-set max health so we can't go over it
+-bars for the stats
+-when level up, set health to max health for the role
+-randomize level up stats for each role
+-MAGIC
+-add move function which actually moves
+-create a separate list for weapons and attributes (Dictionary?)
+-loot from the monsters
+-money
+-shops?
+-npcs
+-missions?
+-fancy graphics :(
+

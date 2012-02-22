@@ -1,7 +1,6 @@
 CHANGELOG
 ---------------------------------
 
-
 version 0.4
 added progress bar function
 removed battle_special fuction. Integrated into the normal battle() function

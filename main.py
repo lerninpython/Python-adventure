@@ -245,6 +245,13 @@ print ("\nThis is your inventory:",inventory)
 
 while health >= 0 and game_on != 999:
     option = input("\noptions: 1-move, 2-look, 3-rest, 9-stats, 99-inventory, 999-quit game\n>")
+    if experience == 10:
+        print ("\nLevel up! You are level",player_level)
+        player_level = player_level + 1
+        experience = 0
+        health = health + 2
+        power = power + 2
+        magic = magic + 1
     if option == "1":
         move()
     elif option == "2":

@@ -41,6 +41,10 @@ def progress():
     spaces =  10 - experience
     loader = "[" + ("=" * int(marks)) + (" " * int(spaces)) + "]" 
     print ("Experience"+loader)
+    print ("Level:",player_level)
+    print ("Health=",health)
+    print ("Power=",power)
+    print ("Magic=",magic)
 
     
 # check if the player has leveled up
@@ -67,6 +71,8 @@ def clear_screen():
 
 # function to choose a name
 def choose_name():
+    global name
+    name = ""
     tempvar = 1
     while tempvar == 1:
         name = input("\n\nWhat is your name?\n")
@@ -75,13 +81,13 @@ def choose_name():
         if (change_name == "n") or (change_name == "N"):
             tempvar = 0
         else:
-            tempvar = 1    
-    return name
+            tempvar = 1
 
     
 # function to choose a role
 def choose_role():
     global role,health,power,magic,inventory
+    role = ""
     tempvar = 1
     while tempvar == 1:
         print("\n")
@@ -98,25 +104,24 @@ def choose_role():
             tempvar = 0
         else:
             tempvar = 1    
-    if role_number == 1:
+    if role == 1:
         role = "Warrior"
         health = 15
         power = 6
         magic = 2
         inventory.append("Sword")
-    elif role_number == 2:
+    elif role == 2:
         role = "Bard"
         health = 9
         power = 4
         magic = 6
         inventory.append("Lire")
-    elif role_number == 3:
+    elif role == 3:
         role = "Mage"
         health = 8
         power = 3
         magic = 9
-        inventory.append("Staff")     
-    return role
+        inventory.append("Staff")
 
 
 # fuction for the battles
@@ -228,8 +233,8 @@ def look():
         
         
 # Call player name fuction and player role function so we can get a character sheet
-player1 = choose_name()
-role_number = int(choose_role())
+choose_name()
+choose_role()
 
 # Set the variables from the start
 count_rest = 0 # to count the number of times the player has rest and gained health. Recover chances by battling
@@ -245,7 +250,7 @@ look_count = 0
 
 os.system(clear_screen())
     
-print ("\n\n\n\tWelcome to the wonderful world of Python Adventures", player1,"!!!")
+print ("\n\n\n\tWelcome to the wonderful world of Python Adventures", name,"!!!")
 print ("\n\n\n\tI can see that you choosed to be a", role,". Good choice!\n")
 print ("\nThis are your stats:")
 print ("\nHealth=",health)
@@ -275,10 +280,6 @@ while health >= 0 and game_on != 999:
     elif option == "9":
         os.system(clear_screen())
         progress()
-        print ("\nLevel:",player_level)
-        print ("\nHealth=",health)
-        print ("\nPower=",power)
-        print ("\nMagic=",magic)
     elif option == "99":
         os.system(clear_screen())
         print (inventory)

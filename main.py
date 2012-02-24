@@ -45,8 +45,7 @@ def progress():
     print ("Health=",health)
     print ("Power=",power)
     print ("Magic=",magic)
-
-    
+ 
 # check if the player has leveled up
 def check_levelup():
     global experience, player_level, health, power, magic
@@ -147,7 +146,6 @@ def battle(enemy):
             print ("Enemy hits you for",enemy_attack_temp,"damage")
             health = health - enemy_attack_temp      
             print ("\nyour health=",health," Enemy health=",enemy_health)
-            experience = experience + 1
         elif choice == "2":
             take_potion()
         elif choice == "3":
@@ -161,8 +159,18 @@ def battle(enemy):
             os.system(clear_screen())
     if enemy_health <= 0:
         print ("You defeated the",enemy)
+        if enemy == "skeleton":
+            experience = experience + 3
+        elif enemy == "slime":
+            experience = experience + 1
+        elif enemy == "bat":
+            experience = experience + 2
+        elif enemy == "dragon":
+            experience = experience + 6
+        input("Press any key to continue")
     elif health <= 0:
         print ("You were defeated by a simple",enemy,".What a shame...")
+        input("Press any key to exit")
         game_on = 999
     time.sleep(2)
     os.system(clear_screen())
@@ -225,7 +233,7 @@ def look():
 # Set the variables from the start
 count_rest = 0 # to count the number of times the player has rest and gained health. Recover chances by battling
 game_on = 0 # to start the main fuction. game_on = 999 means end of the game
-player_level= 0 # placeholder for exp and levels so monsters scale with the player
+player_level= 0
 experience = 0
 look_count = 0
 role = 0
@@ -243,11 +251,7 @@ os.system(clear_screen())
     
 print ("\n\n\n\tWelcome to the wonderful world of Python Adventures", name,"!!!")
 print ("\n\n\n\tI can see that you choosed to be a", role_name,". Good choice!\n")
-print ("\nThis are your stats:")
-print ("\nHealth=",health)
-print ("\nPower=",power)
-print ("\nMagic=",magic)
-print ("\nThis is your inventory:",inventory)
+
     
 
 while health >= 0 and game_on != 999:

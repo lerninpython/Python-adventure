@@ -117,7 +117,7 @@ def choose_role():
 # fuction for the battles
 def battle(enemy):
     print ("\nYou encounter a", enemy)
-    global health, experience
+    global health, experience,game_on
     if enemy == "skeleton":
         enemy_health = 12 + player_level
         enemy_attack = 3 + player_level
@@ -159,7 +159,11 @@ def battle(enemy):
             enemy_health = 0
             time.sleep(3)
             os.system(clear_screen())
-    print ("You defeated the",enemy)
+    if enemy_health <= 0:
+        print ("You defeated the",enemy)
+    elif health <= 0:
+        print ("You were defeated by a simple",enemy,".What a shame...")
+        game_on = 999
     time.sleep(2)
     os.system(clear_screen())
      
@@ -259,7 +263,7 @@ while health >= 0 and game_on != 999:
             print ("\nThere is nothing else here")
     elif option == "3":
         if count_rest < 3:
-            health = health + 1
+            health = health + 3
             count_rest = count_rest + 1
             print("\nYou have only",3 - count_rest, "rests left")
         else:

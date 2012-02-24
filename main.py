@@ -288,3 +288,5 @@ while health >= 0 and game_on != 999:
     elif option == "999":
         game_on = 999
         health = 0
+#    elif option == "6":
+#        experience = experience +1

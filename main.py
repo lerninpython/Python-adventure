@@ -49,7 +49,7 @@ def progress():
     
 # check if the player has leveled up
 def check_levelup():
-    global experience, player_level,health,power,magic
+    global experience, player_level, health, power, magic
     if experience >= 10:
         player_level = player_level + 1
         print ("\nLevel up! You are level",player_level)
@@ -83,46 +83,36 @@ def choose_name():
         else:
             tempvar = 1
 
-    
 # function to choose a role
 def choose_role():
-    global role,health,power,magic,inventory
-    role = ""
-    tempvar = 1
-    while tempvar == 1:
-        print("\n")
-        print("         1-Warrior        2-Bard           3-Mage")
-        print("           -----           -----            -----")
-        print("Health       8               6                4")
-        print("Power        7               6                5")
-        print("Magic        2               6                9")
-        while role not in ("1","2","3"):
-            role = input("\n\nChoose your role number (1,2 or 3)")
-            print("\nThe role you choose is ",role)
-        change_role = input("\n\nDo you want to change your role? (y/n)")
-        if (change_role == "n") or (change_role == "N"):
-            tempvar = 0
-        else:
-            tempvar = 1    
+    global role, role_name, health, power, magic, inventory
+    print("\n")
+    print("         1-Warrior        2-Bard           3-Mage")
+    print("           -----           -----            -----")
+    print("Health       8               6                4")
+    print("Power        7               6                5")
+    print("Magic        2               6                9")
+    while role not in (1,2,3):
+        role = int(input("\n\nChoose your role number (1,2 or 3)"))
     if role == 1:
-        role = "Warrior"
+        role_name = "Warrior"
         health = 15
         power = 6
         magic = 2
         inventory.append("Sword")
+        print ("arrived at first if witht his values:",health,power,magic)
     elif role == 2:
-        role = "Bard"
+        role_name = "Bard"
         health = 9
         power = 4
         magic = 6
         inventory.append("Lire")
     elif role == 3:
-        role = "Mage"
+        role_name = "Mage"
         health = 8
         power = 3
         magic = 9
         inventory.append("Staff")
-
 
 # fuction for the battles
 def battle(enemy):
@@ -172,8 +162,7 @@ def battle(enemy):
     print ("You defeated the",enemy)
     time.sleep(2)
     os.system(clear_screen())
-    
-    
+     
 def take_potion():
     global inventory,health
     if "potion" in inventory:
@@ -186,7 +175,6 @@ def move():
     global look_count
     look_count = 0
     pass
-
 
 # in the look fuction we include the random chance of having to battle, getting a potion or finding a chest
 # should be limited to 2 events on each room, but there are no rooms yet.
@@ -229,29 +217,28 @@ def look():
 
         
  # PROGRAM START!       
-        
-        
-        
-# Call player name fuction and player role function so we can get a character sheet
-choose_name()
-choose_role()
 
 # Set the variables from the start
 count_rest = 0 # to count the number of times the player has rest and gained health. Recover chances by battling
 game_on = 0 # to start the main fuction. game_on = 999 means end of the game
-role = "" # set role to None
-health = 0 # set the initial stats to 0, just in case
-power = 0
-magic = 0
-inventory = [] # inventory is empty
 player_level= 0 # placeholder for exp and levels so monsters scale with the player
 experience = 0
 look_count = 0
+role = 0
+role_name = ""        
+health = 0
+power = 0
+magic = 0
+inventory = []
+
+# Call player name fuction and player role function so we can get a character sheet
+choose_name()
+choose_role()
 
 os.system(clear_screen())
     
 print ("\n\n\n\tWelcome to the wonderful world of Python Adventures", name,"!!!")
-print ("\n\n\n\tI can see that you choosed to be a", role,". Good choice!\n")
+print ("\n\n\n\tI can see that you choosed to be a", role_name,". Good choice!\n")
 print ("\nThis are your stats:")
 print ("\nHealth=",health)
 print ("\nPower=",power)

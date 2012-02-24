@@ -81,8 +81,7 @@ def choose_name():
     
 # function to choose a role
 def choose_role():
-    global role
-    role = ""
+    global role,health,power,magic,inventory
     tempvar = 1
     while tempvar == 1:
         print("\n")
@@ -99,8 +98,27 @@ def choose_role():
             tempvar = 0
         else:
             tempvar = 1    
+    if role_number == 1:
+        role = "Warrior"
+        health = 15
+        power = 6
+        magic = 2
+        inventory.append("Sword")
+    elif role_number == 2:
+        role = "Bard"
+        health = 9
+        power = 4
+        magic = 6
+        inventory.append("Lire")
+    elif role_number == 3:
+        role = "Mage"
+        health = 8
+        power = 3
+        magic = 9
+        inventory.append("Staff")     
     return role
-    
+
+
 # fuction for the battles
 def battle(enemy):
     print ("\nYou encounter a", enemy)
@@ -224,27 +242,6 @@ inventory = [] # inventory is empty
 player_level= 0 # placeholder for exp and levels so monsters scale with the player
 experience = 0
 look_count = 0
-
-# Check which role the player chooses and set the real name (so the user doesn't play with upper and lowercase) 
-# and set the attributes for future use
-if role_number == 1:
-    role = "Warrior"
-    health = 15
-    power = 6
-    magic = 2
-    inventory.append("Sword")
-elif role_number == 2:
-    role = "Bard"
-    health = 9
-    power = 4
-    magic = 6
-    inventory.append("Lire")
-elif role_number == 3:
-    role = "Mage"
-    health = 8
-    power = 3
-    magic = 9
-    inventory.append("Staff")
 
 os.system(clear_screen())
     

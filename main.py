@@ -64,6 +64,7 @@ def check_levelup():
 #       pass
 # I have to keep calling max_health() on the battle() fuction and potion event. Also I need to track how much did health increased during all level ups
 
+
 # create a fuction to clear the screen which work across all os
 def clear_screen():
     clear = ""

@@ -43,7 +43,7 @@ def progress():
  
 # check if the player has leveled up
 def check_levelup():
-    global experience, player_level, health, power, magic
+    global experience, player_level, health, power, magic, health_level
     if experience >= 10:
         player_level = player_level + 1
         print ("\nLevel up! You are level",player_level)
@@ -51,9 +51,19 @@ def check_levelup():
         health = health + 2
         power = power + 2
         magic = magic + 1
+        health_level = health_level + 2
     else:
         pass
-    
+
+# how should I check max health across the game? Some pseudocode here
+#def max_health(x):
+#   role.health + health_gained_by_level_up = max_health
+#   if health > max_health:
+#       health = max health
+#   else:
+#       pass
+# I have to keep calling max_health() on the battle() fuction and potion event. Also I need to track how much did health increased during all level ups
+
 # create a fuction to clear the screen which work across all os
 def clear_screen():
     clear = ""
@@ -237,6 +247,7 @@ health = 0
 power = 0
 magic = 0
 inventory = []
+health_level = 0
 
 # Call player name fuction and player role function so we can get a character sheet
 choose_name()

@@ -1,11 +1,23 @@
-# Copyrigth 2012 - Itxaka Serrano Garcia <itxakaserrano@garciaperez.net>
+Copyrigth 2012 - Itxaka Serrano Garcia <itxakaserrano@garciaperez.net>
 
-Python Adventure
-by Itxaka Serrano
+	This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>
+	
+	
+
+Python Adventure by Itxaka Serrano
 
 
 Python adventure is a simple text only rpg I have started to learn python. If you like it, have a patch, suggestions or anything let me know!
 
-
-Requires Python 3.x, not tested with 2.6
+Rquires Python 3.x, not tested with 2.6.

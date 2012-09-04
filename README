@@ -17,7 +17,6 @@ Copyrigth 2012 - Itxaka Serrano Garcia <itxakaserrano@garciaperez.net>
 
 Python Adventure by Itxaka Serrano
 
-
 Python adventure is a simple text only rpg I have started to learn python. If you like it, have a patch, suggestions or anything let me know!
 
-Rquires Python 3.x, not tested with 2.6.
+Requires Python 3.x, not working with 2.6.
